@@ -27,7 +27,7 @@ def generate_ascii_art(text, font='default'):
         'X': ["X   X ", " X X  ", "  X   ", " X X  ", "X   X "],
         'Y': ["Y   Y ", " Y Y  ", "  Y   ", "  Y   ", "  Y   "],
         'Z': ["ZZZZZ ", "   Z  ", "  Z   ", " Z    ", "ZZZZZ "],
-    }
+        }
 
     # Define ASCII art characters for each letter in the "special" font
     special_font = {
@@ -57,7 +57,7 @@ def generate_ascii_art(text, font='default'):
         'X': ["\\   /", " \\_/ ", " / \\ ", "/   \\", "\\___/"],
         'Y': ["\\   /", " \\_/ ", "  |  ", "  |  ", "  |  "],
         'Z': ["-----", "   / ", "  /  ", " /   ", "-----"],
-    }
+        }
 
     # Define ASCII art characters for each letter in the "decorative" font
     decorative_font = {
@@ -70,7 +70,7 @@ def generate_ascii_art(text, font='default'):
         'G': [" ||_", "|    ", "| __ ", "|  | ", "|__| "],
         'H': ["||   ", "||___", "||  |", "||  |", "||  |"],
         'I': ["_  _", " \\/ ", " /\\ ", " || ", " \\/ "],
-        'J': [" ___", "  | ", "  | ", " _] ", "[__ "),
+        'J': [" ___", "  | ", "  | ", " _] ", "[__ "],
         'K': ["||   ", "||__ ", "||  \\", "||  /", "||   \\"],
         'L': ["||   ", "||   ", "||   ", "||   ", "||___"],
         'M': ["||| |", "||_||", "|| | ", "|| | ", "|| | "],
@@ -87,7 +87,7 @@ def generate_ascii_art(text, font='default'):
         'X': ["/\\  /\\", "  \\/  ", "  /\\  ", " /  \\ ", "/    \\"],
         'Y': ["||   ", "||   ", "|||  ", " || ", " || "],
         'Z': ["|||||", "   / ", "  /  ", " /   ", "|||||"],
-    }
+        }
 
     # Select the appropriate font
     selected_font = default_font if font == 'default' else special_font if font == 'special' else decorative_font
@@ -103,11 +103,11 @@ def generate_ascii_art(text, font='default'):
         if char in selected_font:
             char_art = selected_font[char]
             for i in range(5):  # Assuming each character is 5 lines tall
-                lines[i] += char_art[i] + "   "  # Add three spaces between characters
+                lines[i] += char_art[i] + "   "  # Add three spaces between characters except for the last one
 
     # Print the generated ASCII art
     for line in lines:
-        print(line)
+        print(line.rstrip())  # Use rstrip to remove trailing spaces
 
 # Example usage with the "default" font:
 generate_ascii_art("HELLO")
