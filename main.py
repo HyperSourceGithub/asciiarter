@@ -108,14 +108,18 @@ def generate_ascii_art(text, font='default'):
     # Print the generated ASCII art
     for line in lines:
         print(line.rstrip())  # Use rstrip to remove trailing spaces
+        
+# ---------------------------------
+# Hello users! The following are where you edit!!!
+#----------------------------------
 
 # Example usage with the "default" font:
 generate_ascii_art("HELLO")
-print("\n")
+print("\n") # this can be left alone or removed
 
 # Example usage with the "special" font:
 generate_ascii_art("HELLO", font='special')
-print("\n")
+print("\n") # same as line 118
 
 # Example usage with the "decorative" font:
 generate_ascii_art("HELLO", font='decorative')
